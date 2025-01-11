@@ -1,7 +1,7 @@
-app:
-  name: "web_app"
-  mode: "dev"
-  port: 8080
+name: "web_app"
+mode: "dev"
+version: "v0"
+port: 8080
 
 log:
   level: "debug"
@@ -20,4 +20,6 @@ mysql:
 redis:
   host: "127.0.0.1"
   port: 6379
+  password: ""
   db: 0
+  pool_size: 100
