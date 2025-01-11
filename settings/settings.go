@@ -56,14 +56,14 @@ func Init() (err error) {
 	if err != nil {                       // 处理读取配置文件的错误
 		panic(fmt.Errorf("Fatal error config file: %s \n", err))
 	}
-	if err = viper.Unmarshal(&Conf); err != nil {
+	if err = viper.Unmarshal(Conf); err != nil {
 		fmt.Println("Unmarshal err:", err)
 		return err
 	}
 	viper.WatchConfig()
 	viper.OnConfigChange(func(e fsnotify.Event) {
 		fmt.Println("Config file changed:", e.Name)
-		if err = viper.Unmarshal(&Conf); err != nil {
+		if err = viper.Unmarshal(Conf); err != nil {
 			fmt.Println("Unmarshal err:", err)
 		}
 	})
